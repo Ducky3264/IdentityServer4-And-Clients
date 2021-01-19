@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
+// NOTE: This file is unecessary to the final project. This is for testing purposes only. This file can be 
+// used to create users in the service without a database, which can be good to isolate errors. 
 
 using IdentityModel;
 using IdentityServer4.Test;
