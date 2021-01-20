@@ -43,7 +43,7 @@ namespace ExampleClient
         options.SaveTokens = true;
         options.GetClaimsFromUserInfoEndpoint = true;
         options.ClientId = "interactive";
-        options.ClientSecret = "secret";
+        options.ClientSecret = "Redacted";
         options.ResponseType = "code";
         options.Scope.Add("profile");
         options.Scope.Add("openid");
