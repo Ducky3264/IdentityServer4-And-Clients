@@ -43,7 +43,7 @@ namespace IDSEmpty
             // secret for authentication
             ClientSecrets =
             {
-                new Secret("secret".Sha256())
+                new Secret("Redacted for security".Sha256())
 
             },
 
