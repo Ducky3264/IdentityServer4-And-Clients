@@ -56,7 +56,7 @@ namespace IDSEmpty
             //new Claim(JwtClaimTypes.Name, (!string.IsNullOrEmpty(user.Firstname) && !string.IsNullOrEmpty(user.Lastname)) ? (user.Firstname + " " + user.Lastname) : ""),
             //new Claim(JwtClaimTypes.GivenName, user.Firstname  ?? ""),
             //new Claim(JwtClaimTypes.FamilyName, user.Lastname  ?? ""),
-            new Claim(JwtClaimTypes.Email, "david.love.wii@gmail.com")
+            new Claim(JwtClaimTypes.Email, "")
             //new Claim("some_claim_you_want_to_see", user.Some_Data_From_User ?? ""),
 
             //roles
