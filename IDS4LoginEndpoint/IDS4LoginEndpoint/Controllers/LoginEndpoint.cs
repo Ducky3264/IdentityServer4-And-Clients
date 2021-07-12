@@ -5,31 +5,31 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+    
 namespace IDS4LoginEndpoint.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class LoginEndpoint : ControllerBase
     {
-        //This method is responsible for the Hosted UI. Any application requesting that login be hosted on my servers will use this.
+        //Make sure you configure the client ids to something long and hard to guess, and keep them secret
         [HttpGet]
         public IActionResult Get()
         {
             var user = HttpContext.User;
-            //Naturally, once I make this service an actual service "Client" will become a list of strings referenced from a database. A foreach statement would be a good idea.
-            if (user.HasClaim("client_id", "interactive"))
+           
+            if (user.HasClaim("client_id", "m2m"))
             {
-                //These returns need to be modified to return views, not simple strings. 
+                //Add the content you want to return on authorized get here
                 return Content("Authorized");
             }
-            //Return login page
+            
             return Content("Unauthorized");
         }
    
 
 
-        //This method is responsible for Non hosted identity services. Any application requesting that the user inputs their login info on a server other than mine will use this. As of 7/8/20, I plan to not use any views for this, and have it be a strict web API. Subject to change.
+       
         [HttpPost]
         public IActionResult PostFormLogin()
         {
@@ -38,6 +38,7 @@ namespace IDS4LoginEndpoint.Controllers
             var user = HttpContext.User;
             if (user.HasClaim("client_id", "m2m"))
             {
+                //Add the content you want to return on authorized post here. Use HttpContext.Request.Form[String] to collect the data you are attempting to collect.
                 return Ok();
             }
             return Unauthorized();
